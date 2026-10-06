@@ -1,0 +1,121 @@
+/* ==========================================================
+   base.css — the foundation of the whole site
+   ----------------------------------------------------------
+   1. Font (saved in the /fonts folder, so it loads fast)
+   2. Brand colors & sizes (change them here, they update everywhere)
+   3. Reset (removes browser default spacing)
+   4. Text styles (headings, paragraphs, links)
+   ========================================================== */
+
+
+/* ---------- 1. Font ----------
+   Jost: clean and friendly. One file has every weight. */
+@font-face {
+  font-family: 'Jost';
+  src: url('../fonts/jost.woff') format('woff');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+
+/* ---------- 2. Brand colors & sizes ----------
+   Black and off-white. (The only orange on the site is Bino himself.)
+   Use them anywhere like:  color: var(--ink);                       */
+:root {
+  --ink: #1c1a17;          /* our black (warm, like the logo ink) */
+  --paper: #f6f2ea;        /* off-white page background */
+  --card: #fffdf8;         /* slightly lighter, for cards and the laptop screen */
+  --soft: #ede7db;         /* slightly darker, for alternating sections */
+  --line: rgba(28, 26, 23, 0.14); /* thin borders */
+  --muted: #5d574e;        /* softer text for descriptions */
+
+  --font: 'Jost', system-ui, sans-serif;
+
+  --page-width: 1180px;    /* max width of the content */
+  --gutter: 24px;          /* space on the left/right edges on phones */
+  --radius: 20px;          /* how round our corners are */
+}
+
+
+/* ---------- 3. Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* padding no longer makes boxes bigger */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* When a link jumps to a section (like #pricing), leave room for the sticky header */
+[id] {
+  scroll-margin-top: 96px;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+
+/* ---------- 4. Text styles ---------- */
+h1,
+h2,
+h3 {
+  margin: 0 0 0.45em;
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(40px, 5.4vw, 70px); }  /* clamp = small on phones, big on laptops */
+h2 { font-size: clamp(32px, 3.8vw, 50px); }
+h3 { font-size: 22px; letter-spacing: -0.01em; }
+
+p { margin: 0 0 1em; }
+
+a { color: inherit; }
+
+/* The small spaced-out uppercase labels, like "WEB STUDIO" in the logo */
+.label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Text that is hidden on screen but still read by screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* A visible outline when someone uses the keyboard (Tab key) to move around */
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 8px;
+}

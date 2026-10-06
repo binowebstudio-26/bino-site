@@ -1,0 +1,372 @@
+/* ==========================================================
+   cats.css — everything about the cats 🐾
+   ----------------------------------------------------------
+   1. Hero: laptop screen + the sleeping, breathing cat
+   2. Bino peeking over the black box (eyes follow your mouse)
+   3. Little "hop" when a cat is clicked
+   4. Reduced motion (for visitors who turn animations off)
+   ========================================================== */
+
+
+/* ---------- 1. Hero: laptop + sleeping cat ---------- */
+.hero {
+  position: relative;
+  padding: 36px 0 20px;
+  overflow-x: clip; /* the tail never causes sideways scrolling on phones */
+}
+
+/* The hero is a bit wider than the rest of the page so the laptop can be big */
+.hero .container {
+  position: relative;
+  max-width: 1260px;
+  padding: 0 64px;
+}
+
+/* The whole laptop. --cat-size controls how big the cat is. */
+.laptop {
+  --cat-size: 440px;   /* how big the cat is */
+  --base-height: 26px; /* how thick the keyboard part is */
+  position: relative;
+  width: 100%;
+  margin: 24px auto calc(var(--cat-size) * 0.3); /* room under the laptop for the hanging tail */
+}
+
+/* The screen: a thick ink frame with rounded corners.
+   aspect-ratio 16 / 10 gives it the shape of a real laptop screen */
+.laptop-screen {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  flex-direction: column;
+  border: 10px solid var(--ink);
+  border-radius: 28px;
+  background: var(--card);
+  overflow: hidden;
+}
+
+/* The fake browser bar at the top of the screen */
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border-bottom: 2px solid var(--ink);
+  background: var(--paper);
+}
+
+.browser-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+}
+
+.browser-address {
+  margin-left: 14px;
+  padding: 2px 18px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--card);
+  font-size: 14px;
+}
+
+/* The text and buttons inside the screen, centered from top to bottom */
+.screen-content {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 88px;
+}
+
+.screen-content .label {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--muted);
+}
+
+.screen-content h1 {
+  max-width: 880px;
+}
+
+.screen-content p {
+  max-width: 560px;
+  font-size: 20px;
+  margin-bottom: 34px;
+  color: var(--muted);
+}
+
+/* The keyboard base: a bit wider than the screen, with a little notch */
+.laptop-base {
+  position: relative;
+  height: var(--base-height);
+  margin: 0 -36px;
+  background: var(--ink);
+  border-radius: 4px 4px 22px 22px;
+}
+
+.laptop-base::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 120px;
+  height: 7px;
+  transform: translateX(-50%);
+  background: var(--paper);
+  border-radius: 0 0 10px 10px;
+}
+
+
+/* ---------- The sleeping cat ----------
+   The cat lies on the keyboard at the right end, in front of the screen,
+   with its tail hanging off the edge of the laptop.
+   (The numbers line up the bottom of the drawn body with the top of the keyboard.) */
+.sleepy-cat {
+  position: absolute;
+  z-index: 2;
+  width: var(--cat-size);
+  right: calc(-36px - var(--cat-size) * 0.075);
+  bottom: calc(var(--base-height) - var(--cat-size) * 0.3667 - 2px);
+  pointer-events: none; /* the empty space around the cat doesn't block clicks... */
+}
+
+.sleepy-cat svg {
+  width: 100%;
+  overflow: visible;
+}
+
+/* ...only the cat itself can be petted */
+.sleepy-cat svg g {
+  pointer-events: visiblePainted;
+  cursor: grab;
+}
+
+/* Breathing: the body gets a little taller, then relaxes (every 3.6 seconds) */
+.cat-body {
+  transform-box: view-box;
+  transform-origin: 145px 141px; /* the bottom of the body stays put */
+  animation: breathe 3.6s ease-in-out infinite;
+}
+
+.cat-head {
+  animation: head-bob 3.6s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scaleY(1); }
+  45%      { transform: scaleY(1.07); }
+}
+
+@keyframes head-bob {
+  0%, 100% { transform: translateY(0); }
+  45%      { transform: translateY(-2px); }
+}
+
+/* Tail: gently swings back and forth from where it joins the body */
+.cat-tail {
+  transform-box: view-box;
+  transform-origin: 222px 124px;
+  animation: tail-swing 2.8s ease-in-out infinite;
+}
+
+@keyframes tail-swing {
+  0%, 100% { transform: rotate(-5deg); }
+  50%      { transform: rotate(6deg); }
+}
+
+/* Zzz's: each one floats up from the head, grows, and fades away */
+.zzz {
+  position: absolute;
+  left: 22%;
+  top: 22%;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1;
+  opacity: 0;
+  animation: float-zzz 4.5s ease-out infinite;
+}
+
+.zzz-1 { font-size: 26px; animation-delay: 0s; }
+.zzz-2 { font-size: 36px; animation-delay: 1.5s; }
+.zzz-3 { font-size: 24px; animation-delay: 3s; }
+
+@keyframes float-zzz {
+  0%   { opacity: 0; transform: translate(0, 0) rotate(-8deg) scale(0.6); }
+  15%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(-40px, -90px) rotate(8deg) scale(1.2); }
+}
+
+/* Purring: the sleeping cat trembles softly while you pet it */
+.sleepy-cat.is-talking svg {
+  animation: purr-shake 0.12s linear infinite;
+}
+
+.sleepy-cat.is-talking .zzz {
+  animation-play-state: paused;
+  opacity: 0;
+}
+
+@keyframes purr-shake {
+  0%, 100% { translate: 0 0; }
+  50%      { translate: 0.6px -0.6px; }
+}
+
+
+/* ---------- 2. Bino peeking over the black box ---------- */
+.peek-cat {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 220px;
+  transform: translate(-50%, -85.5%); /* lines the bottom of Bino's head up with the top of the box */
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+.peek-cat svg {
+  width: 100%;
+  overflow: visible;
+}
+
+/* the pupils move with your mouse (cats.js) */
+.peek-pupil {
+  transition: transform 0.08s linear;
+}
+
+/* the ears twitch when you hover */
+.peek-cat:hover .peek-ear-left {
+  animation: ear-twitch 0.5s ease;
+}
+
+.peek-ear-left {
+  transform-box: view-box;
+  transform-origin: 110px 120px;
+}
+
+@keyframes ear-twitch {
+  30% { transform: rotate(-4deg); }
+  60% { transform: rotate(2deg); }
+}
+
+/* happy squint after a click: open eyes hide, ^ ^ eyes show */
+.peek-happy {
+  opacity: 0;
+}
+
+.peek-cat.is-happy .peek-eyes {
+  opacity: 0;
+}
+
+.peek-cat.is-happy .peek-happy {
+  opacity: 1;
+}
+
+@media (max-width: 700px) {
+  .peek-cat {
+    width: 170px;
+  }
+}
+
+
+/* ---------- Phones: smaller laptop + cat ---------- */
+@media (max-width: 760px) {
+  .hero .container {
+    padding: 0 var(--gutter);
+  }
+
+  .laptop {
+    --cat-size: 230px;
+    --base-height: 16px;
+  }
+
+  /* On phones the screen is taller than wide, so it grows to fit the text */
+  .laptop-screen {
+    aspect-ratio: auto;
+    border-width: 7px;
+    border-radius: 20px;
+  }
+
+  .browser-bar {
+    padding: 10px 14px;
+  }
+
+  .browser-address {
+    display: none;
+  }
+
+  .screen-content {
+    padding: 34px 22px calc(var(--cat-size) * 0.45); /* leaves room so the cat doesn't cover the buttons */
+  }
+
+  .screen-content p {
+    font-size: 18px;
+  }
+
+  .laptop-base {
+    margin: 0 -14px;
+  }
+
+  .sleepy-cat {
+    right: calc(-14px - var(--cat-size) * 0.075);
+  }
+
+  /* on small screens the Zzz's would float over the buttons, so they rest */
+  .zzz {
+    display: none;
+  }
+
+  .screen-content h1 {
+    font-size: clamp(34px, 9.6vw, 44px);
+  }
+}
+
+
+/* ---------- 3. Hop ---------- */
+.hop {
+  animation: hop 0.4s ease;
+}
+
+@keyframes hop {
+  0%, 100% { translate: 0 0; }
+  40%      { translate: 0 -14px; }
+}
+
+
+/* ---------- 4. Reduced motion ----------
+   Some people get dizzy from movement and turn it off on their device.
+   For them, everything stays still. */
+@media (prefers-reduced-motion: reduce) {
+  .cat-body,
+  .cat-head,
+  .cat-tail,
+  .zzz,
+  .hop,
+  .sleepy-cat.is-talking svg,
+  .mock-phone.is-moving,
+  .info.is-active {
+    animation: none;
+  }
+
+  .slide {
+    transition: none;
+  }
+
+  .zzz-2 {
+    opacity: 1;
+    transform: translate(-20px, -40px);
+  }
+
+  .js [data-reveal] {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
