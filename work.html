@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ====== PAGE SETTINGS (not visible on the page) ====== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work · bino. web studio</title>
+  <meta name="description" content="Websites designed and built by bino. web studio for small businesses.">
+
+  <!-- How the page looks when the link is shared -->
+  <meta property="og:title" content="Work · bino. web studio">
+  <meta property="og:description" content="Websites designed and built by bino. web studio for small businesses.">
+  <meta property="og:image" content="https://binostudio.com/images/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Tab icon -->
+  <link rel="icon" href="images/logo/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
+
+  <!-- The font lives in /fonts. Preloading makes the text show up faster. -->
+  <link rel="preload" href="fonts/jost.woff" as="font" type="font/woff" crossorigin>
+
+  <!-- Our styles, in order: foundation → layout → pieces → pages → cats -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/cats.css">
+
+  <!-- Tells the CSS that JavaScript is on (so scroll animations can run) -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <!-- ====== HEADER (same on every page) ====== -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="images/logo/bino-logo.png" alt="bino. home" width="851" height="367"></a>
+
+      <nav class="nav" aria-label="Main">
+        <a href="work.html" aria-current="page">Work</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="start.html" class="button button-small">Get a free quote</a>
+      </nav>
+
+      <div class="nav-tools">
+        <button class="menu-button button button-outline button-small" type="button" aria-expanded="false">Menu</button>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ====== 1. INTRO ====== -->
+    <section class="page-header">
+      <div class="container">
+        <span class="label">Work</span>
+        <h1>Recent work.</h1>
+        <p>Every website is designed from scratch around the business it's for. Here's what I've been building.</p>
+      </div>
+    </section>
+
+
+    <!-- ====== 2. PROJECTS ======
+         To add a project: copy one <article class="project"> block. -->
+    <section class="section" style="padding-top: 40px">
+      <div class="container">
+
+        <article class="project" id="sukkar" data-reveal>
+          <a class="device-stage" href="sukkar.html" aria-label="Read the Sukkar case study">
+            <div class="mock-laptop">
+              <div class="mock-screen"><img src="images/work/sukkar/sukkar-desktop.jpg" alt="Sukkar home page on a laptop" width="1600" height="1000"></div>
+            </div>
+            <div class="mock-phone"><img src="images/work/sukkar/sukkar-phone.jpg" alt="" width="780" height="1688"></div>
+          </a>
+          <div>
+            <span class="status">Live</span><br>
+            <span class="label">Food &amp; drink · Pop-up</span>
+            <h2>Sukkar</h2>
+            <p>A fresh sugarcane juice pop-up needed one place to show the menu, list upcoming markets and take event bookings.</p>
+            <ul class="project-meta">
+              <li>Design</li><li>Development</li><li>Illustration</li><li>Booking form</li><li>Events calendar</li>
+            </ul>
+            <div class="button-row">
+              <a href="sukkar.html" class="button">Read the case study <span class="arrow">→</span></a>
+              <a href="https://sukkarcane.com" class="button button-outline" target="_blank" rel="noopener">Visit site <span class="arrow">↗</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" id="turkish-cafe" data-reveal>
+          <div class="device-stage">
+            <div class="mock-laptop">
+              <div class="mock-screen"><div class="slide-soon"><svg viewBox="0 0 320 220" role="img" aria-label="Drawing of a Turkish tea glass and a coffee cup">
+                <defs>
+                  <filter id="ink-cafe311" x="-10%" y="-10%" width="120%" height="120%">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.07" numOctaves="3" seed="4" result="noise"/>
+                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+                  </filter>
+                  <clipPath id="tea-glass311"><path d="M72 60 C76 92 98 104 98 124 C98 144 88 160 90 184 L130 184 C132 160 122 144 122 124 C122 104 144 92 148 60 Z"/></clipPath>
+                </defs>
+                <g filter="url(#ink-cafe311)">
+                  <!-- steam -->
+                  <path d="M100 48 C90 34 112 26 102 10 M122 50 C112 36 132 28 124 14" stroke="#1c1a17" stroke-width="4" stroke-linecap="round" fill="none"/>
+                  <path d="M220 100 C210 86 230 78 220 62 M244 100 C234 86 254 76 244 58" stroke="#1c1a17" stroke-width="4" stroke-linecap="round" fill="none"/>
+                  <!-- tea glass on a saucer -->
+                  <ellipse cx="110" cy="190" rx="66" ry="12" fill="#ffffff" stroke="#1c1a17" stroke-width="5"/>
+                  <rect x="60" y="76" width="100" height="112" fill="#1c1a17" clip-path="url(#tea-glass311)"/>
+                  <path d="M72 60 C76 92 98 104 98 124 C98 144 88 160 90 184 L130 184 C132 160 122 144 122 124 C122 104 144 92 148 60 Z" fill="none" stroke="#1c1a17" stroke-width="5" stroke-linejoin="round"/>
+                  <path d="M84 86 C88 100 100 108 104 120" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none"/>
+                  <!-- coffee cup on a saucer -->
+                  <ellipse cx="232" cy="190" rx="60" ry="11" fill="#ffffff" stroke="#1c1a17" stroke-width="5"/>
+                  <path d="M266 132 C292 128 294 162 262 164" stroke="#1c1a17" stroke-width="8" stroke-linecap="round" fill="none"/>
+                  <path d="M192 118 L272 118 C270 158 254 182 232 182 C210 182 194 158 192 118 Z" fill="#1c1a17"/>
+                  <path d="M200 138 l8 -7 l8 7 l8 -7 l8 7 l8 -7 l8 7 l8 -7 l8 7" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+                </g>
+              </svg><span class="label">Turkish café · In progress</span></div></div>
+            </div>
+            <div class="mock-phone"><div class="slide-soon"><svg viewBox="0 0 320 220" role="img" aria-label="Drawing of a Turkish tea glass and a coffee cup">
+                <defs>
+                  <filter id="ink-cafe411" x="-10%" y="-10%" width="120%" height="120%">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.07" numOctaves="3" seed="4" result="noise"/>
+                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+                  </filter>
+                  <clipPath id="tea-glass411"><path d="M72 60 C76 92 98 104 98 124 C98 144 88 160 90 184 L130 184 C132 160 122 144 122 124 C122 104 144 92 148 60 Z"/></clipPath>
+                </defs>
+                <g filter="url(#ink-cafe411)">
+                  <!-- steam -->
+                  <path d="M100 48 C90 34 112 26 102 10 M122 50 C112 36 132 28 124 14" stroke="#1c1a17" stroke-width="4" stroke-linecap="round" fill="none"/>
+                  <path d="M220 100 C210 86 230 78 220 62 M244 100 C234 86 254 76 244 58" stroke="#1c1a17" stroke-width="4" stroke-linecap="round" fill="none"/>
+                  <!-- tea glass on a saucer -->
+                  <ellipse cx="110" cy="190" rx="66" ry="12" fill="#ffffff" stroke="#1c1a17" stroke-width="5"/>
+                  <rect x="60" y="76" width="100" height="112" fill="#1c1a17" clip-path="url(#tea-glass411)"/>
+                  <path d="M72 60 C76 92 98 104 98 124 C98 144 88 160 90 184 L130 184 C132 160 122 144 122 124 C122 104 144 92 148 60 Z" fill="none" stroke="#1c1a17" stroke-width="5" stroke-linejoin="round"/>
+                  <path d="M84 86 C88 100 100 108 104 120" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none"/>
+                  <!-- coffee cup on a saucer -->
+                  <ellipse cx="232" cy="190" rx="60" ry="11" fill="#ffffff" stroke="#1c1a17" stroke-width="5"/>
+                  <path d="M266 132 C292 128 294 162 262 164" stroke="#1c1a17" stroke-width="8" stroke-linecap="round" fill="none"/>
+                  <path d="M192 118 L272 118 C270 158 254 182 232 182 C210 182 194 158 192 118 Z" fill="#1c1a17"/>
+                  <path d="M200 138 l8 -7 l8 7 l8 -7 l8 7 l8 -7 l8 7 l8 -7 l8 7" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+                </g>
+              </svg></div></div>
+          </div>
+          <div>
+            <span class="status status-soon">In progress</span><br>
+            <span class="label">Café · Prototype</span>
+            <h2>Turkish café</h2>
+            <p>A warm, easy-to-use website for a local Turkish café: a menu that's easy to read on a phone, photos of the food and the space, hours, and upcoming events.</p>
+            <ul class="project-meta">
+              <li>Design</li><li>Development</li><li>Menu</li><li>Photo gallery</li>
+            </ul>
+            <p><strong>Case study coming soon.</strong></p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ====== CALL TO ACTION: Bino peeks over the black box ======
+         Bino's eyes follow your mouse. Click him and he meows (if cat sounds are on). -->
+    <section class="section">
+      <div class="container">
+        <div class="cta" data-reveal>
+          <button class="peek-cat" type="button" data-meow aria-label="Bino the cat. Click to say hi.">
+            <svg viewBox="0 0 220 200" aria-hidden="true">
+              <defs>
+                <filter id="ink-peek" x="-10%" y="-10%" width="120%" height="120%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" seed="5" result="noise"/>
+                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G"/>
+                </filter>
+                <clipPath id="peek-head"><path d="M28 171 C24 128 36 94 56 76 L56 30 L92 58 C104 54 116 54 128 58 L164 30 L164 76 C184 94 196 128 192 171 Z"/></clipPath>
+              </defs>
+              <g filter="url(#ink-peek)">
+                <!-- head: white with an orange cap, like the real Bino -->
+                <path d="M28 171 C24 128 36 94 56 76 L56 30 L92 58 C104 54 116 54 128 58 L164 30 L164 76 C184 94 196 128 192 171 Z" fill="#ffffff"/>
+                <path class="peek-ear-left" d="M0 0 H220 V96 C186 84 160 104 128 98 C110 94 104 82 110 70 C96 78 70 90 40 96 C24 99 10 96 0 92 Z" fill="#f2853a" clip-path="url(#peek-head)"/>
+                <path d="M28 171 C24 128 36 94 56 76 L56 30 L92 58 C104 54 116 54 128 58 L164 30 L164 76 C184 94 196 128 192 171" fill="none" stroke="#1c1a17" stroke-width="7" stroke-linejoin="round"/>
+                <!-- open eyes (they follow your mouse) -->
+                <g class="peek-eyes">
+                  <g class="peek-pupil">
+                    <ellipse cx="84" cy="122" rx="9" ry="12" fill="#1c1a17"/>
+                    <ellipse cx="136" cy="122" rx="9" ry="12" fill="#1c1a17"/>
+                    <circle cx="87" cy="117" r="3" fill="#ffffff"/>
+                    <circle cx="139" cy="117" r="3" fill="#ffffff"/>
+                  </g>
+                </g>
+                <!-- happy eyes ^ ^ (show after a click) -->
+                <path class="peek-happy" d="M74 126 Q84 112 94 126 M126 126 Q136 112 146 126" stroke="#1c1a17" stroke-width="5" stroke-linecap="round" fill="none"/>
+                <!-- nose, mouth, whiskers -->
+                <path d="M104 140 L116 140 L110 147 Z" fill="#f2853a" stroke="#1c1a17" stroke-width="2.5" stroke-linejoin="round"/>
+                <path d="M110 147 q-6 8 -13 3 M110 147 q6 8 13 3" stroke="#1c1a17" stroke-width="3" stroke-linecap="round" fill="none"/>
+                <path d="M8 132 L60 140 M10 150 L60 148 M212 132 L160 140 M210 150 L160 148" stroke="#1c1a17" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- paws resting on the edge of the box -->
+                <g fill="#ffffff" stroke="#1c1a17" stroke-width="6">
+                  <ellipse cx="66" cy="178" rx="24" ry="15"/>
+                  <ellipse cx="154" cy="178" rx="24" ry="15"/>
+                </g>
+                <path d="M58 186 v-8 M70 186 v-8 M146 186 v-8 M158 186 v-8" stroke="#1c1a17" stroke-width="3" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </button>
+
+          <h2>Your business could be next.</h2>
+          <p>Tell me what you need and I'll get back to you within a day or two with ideas and a quote.</p>
+          <div class="button-row">
+            <a href="start.html" class="button button-light">Get a free quote <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== FOOTER (same on every page) ====== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo logo-footer"><img src="images/logo/bino-logo.png" alt="bino. home" width="851" height="367"></a>
+          <p class="footer-tagline">Custom websites for small businesses, designed and built by hand.</p>
+        </div>
+        <div>
+          <span class="label footer-title">Studio</span>
+          <ul>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="start.html">Get a free quote</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="label footer-title">Legal</span>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="label footer-title">Contact</span>
+          <ul>
+            <li><a href="mailto:hello@binostudio.com">hello@binostudio.com</a></li>
+            <li><a href="tel:+15402540791">(540) 254-0791</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-bottom">
+        <span>© <span class="year">2026</span> bino. web studio · Somaya Malek</span>
+        <button class="sound-toggle" type="button" aria-pressed="false">Cat sounds: <span class="sound-state">off</span></button>
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- Scripts go at the end so the page shows up first -->
+  <script src="js/main.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/cats.js"></script>
+</body>
+</html>
