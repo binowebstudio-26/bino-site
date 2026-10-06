@@ -26,11 +26,11 @@ Netlify sees the push and updates binostudio.com in about a minute.
 ```
 bino-site/
 ├── index.html        Home: laptop + sleeping cat, "Some of my work" slideshow,
-│                     what you get, about, pricing, steps, FAQ
+│                     what you get, about, packages, steps, FAQ
 ├── work.html         All projects (Sukkar + Turkish café prototype)
 ├── sukkar.html       Sukkar case study (challenge → solution → outcome)
-├── pricing.html      Plans, care plan, FAQ
-├── about.html        About (written as Bino the cat)
+├── services.html     Packages (no prices shown), care plan, FAQ
+├── about.html        About Somaya
 ├── start.html        "Get a free quote" form (Netlify form "project-inquiry")
 ├── contact.html      Contact details + short form (Netlify form "contact")
 ├── privacy.html      Privacy Policy
@@ -89,7 +89,8 @@ Netlify → your site → **Forms** → **Form notifications** → add hello@bin
 
 ## Prices
 
-Prices are written in `index.html` and `pricing.html` (search for `$600`). Change both.
+Prices are not shown on the site (every client gets a quote). To add them later, add a
+`<div class="price">` line to each package in `index.html` and `services.html`.
 
 ## When the Turkish café site is ready
 

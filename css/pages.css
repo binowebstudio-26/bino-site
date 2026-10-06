@@ -501,3 +501,24 @@
     max-width: 360px;
   }
 }
+
+/* The caption under Bino's photo */
+.portrait-figure {
+  margin: 0;
+}
+
+.portrait-figure figcaption {
+  margin-top: 12px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* Packages without prices: a thin line between the description and the list */
+.plan-for {
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.plan-card-featured .plan-for {
+  border-color: rgba(246, 242, 234, 0.2);
+}

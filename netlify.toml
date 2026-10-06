@@ -10,8 +10,8 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# The old Services page moved to Pricing
+# The Pricing page was renamed to Services
 [[redirects]]
-  from = "/services.html"
-  to = "/pricing.html"
+  from = "/pricing.html"
+  to = "/services.html"
   status = 301
