@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ====== PAGE SETTINGS (not visible on the page) ====== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact · bino. web studio</title>
+  <meta name="description" content="Contact bino. web studio: hello@binostudio.com or (540) 254-0791.">
+
+  <!-- How the page looks when the link is shared -->
+  <meta property="og:title" content="Contact · bino. web studio">
+  <meta property="og:description" content="Contact bino. web studio: hello@binostudio.com or (540) 254-0791.">
+  <meta property="og:image" content="https://binostudio.com/images/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Tab icon -->
+  <link rel="icon" href="images/logo/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
+
+  <!-- The font lives in /fonts. Preloading makes the text show up faster. -->
+  <link rel="preload" href="fonts/jost.woff" as="font" type="font/woff" crossorigin>
+
+  <!-- Our styles, in order: foundation → layout → pieces → pages → cats -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/cats.css">
+
+  <!-- Tells the CSS that JavaScript is on (so scroll animations can run) -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <!-- ====== HEADER (same on every page) ====== -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="images/logo/bino-logo.png" alt="bino. home" width="851" height="367"></a>
+
+      <nav class="nav" aria-label="Main">
+        <a href="work.html">Work</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a href="start.html" class="button button-small">Get a free quote</a>
+      </nav>
+
+      <div class="nav-tools">
+        <button class="menu-button button button-outline button-small" type="button" aria-expanded="false">Menu</button>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+
+
+
+    <!-- ====== 1. INTRO ====== -->
+    <section class="page-header">
+      <div class="container">
+        <span class="label">Contact</span>
+        <h1>Let's talk.</h1>
+        <p>Have a question? Send a message, email or call. Ready to start a website? The <a href="start.html" class="text-link">quote form</a> is the fastest way.</p>
+      </div>
+    </section>
+
+
+    <!-- ====== 2. CONTACT DETAILS + SHORT FORM ====== -->
+    <section class="section form-section">
+      <div class="container contact-grid">
+
+        <!-- Left: ways to reach bino. -->
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="label">Email</span>
+            <p><a href="mailto:hello@binostudio.com">hello@binostudio.com</a></p>
+          </div>
+          <div class="contact-item">
+            <span class="label">Call or text</span>
+            <p><a href="tel:+15402540791">(540) 254-0791</a></p>
+          </div>
+          <div class="contact-item">
+            <span class="label">Where</span>
+            <p>Virginia &amp; online, anywhere in the US</p>
+          </div>
+          <div class="contact-item">
+            <span class="label">Replies</span>
+            <p>Usually within a day or two</p>
+          </div>
+        </div>
+
+        <!-- Right: the short contact form (works the same way as the project form) -->
+        <form class="form" name="contact" method="POST" action="thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="sr-only"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+          <div class="field">
+            <label for="c-name">Your name</label>
+            <input id="c-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="c-email">Email</label>
+            <input id="c-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="c-message">Message</label>
+            <textarea id="c-message" name="message" rows="5" required></textarea>
+          </div>
+          <p class="form-note">Your details are only used to reply to you. See the <a href="privacy.html" class="text-link">Privacy Policy</a>.</p>
+          <button type="submit" class="button">Send message <span class="arrow">→</span></button>
+        </form>
+
+      </div>
+    </section>
+
+  
+  
+  
+  </main>
+
+  <!-- ====== FOOTER (same on every page) ====== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo logo-footer"><img src="images/logo/bino-logo.png" alt="bino. home" width="851" height="367"></a>
+          <p class="footer-tagline">Custom websites for small businesses, designed and built by hand.</p>
+        </div>
+        <div>
+          <span class="label footer-title">Studio</span>
+          <ul>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="start.html">Get a free quote</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="label footer-title">Legal</span>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="label footer-title">Contact</span>
+          <ul>
+            <li><a href="mailto:hello@binostudio.com">hello@binostudio.com</a></li>
+            <li><a href="tel:+15402540791">(540) 254-0791</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-bottom">
+        <span>© <span class="year">2026</span> bino. web studio</span>
+        <button class="sound-toggle" type="button" aria-pressed="false">Cat sounds: <span class="sound-state">off</span></button>
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- Scripts go at the end so the page shows up first -->
+  <script src="js/main.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/cats.js"></script>
+</body>
+</html>

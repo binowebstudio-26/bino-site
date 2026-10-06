@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ====== PAGE SETTINGS (not visible on the page) ====== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bino. web studio · Custom websites for small businesses</title>
+  <meta name="description" content="bino. is a one-person web design studio that designs and builds custom websites to help small businesses get found and win customers.">
+
+  <!-- How the page looks when the link is shared -->
+  <meta property="og:title" content="bino. web studio · Custom websites for small businesses">
+  <meta property="og:description" content="bino. is a one-person web design studio that designs and builds custom websites to help small businesses get found and win customers.">
+  <meta property="og:image" content="https://binostudio.com/images/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Tab icon -->
+  <link rel="icon" href="images/logo/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
+
+  <!-- The font lives in /fonts. Preloading makes the text show up faster. -->
+  <link rel="preload" href="fonts/jost.woff" as="font" type="font/woff" crossorigin>
+
+  <!-- Our styles, in order: foundation → layout → pieces → pages → cats -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/cats.css">
+
+  <!-- Tells the CSS that JavaScript is on (so scroll animations can run) -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <!-- ====== HEADER (same on every page) ====== -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="images/logo/bino-logo.png" alt="bino. home" width="851" height="367"></a>
+
+      <nav class="nav" aria-label="Main">
+        <a href="work.html">Work</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="start.html" class="button button-small">Get a free quote</a>
+      </nav>
+
+      <div class="nav-tools">
+        <button class="menu-button button button-outline button-small" type="button" aria-expanded="false">Menu</button>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ====== 1. HERO: a laptop with a sleeping cat on it ======
+         The headline and buttons live INSIDE the laptop screen.
+         The cat is drawn in code (SVG) so its body, tail and Zzz's can move separately.
+         Pet it with your mouse (or tap on a phone) and it purrs. -->
+    <section class="hero">
+      <div class="container">
+        <div class="laptop">
+
+          <div class="sleepy-cat" data-purr>
+            <svg viewBox="0 0 270 240" role="img" aria-label="A black cat sleeping on the laptop, tail hanging off the side">
+              <defs>
+                <filter id="ink" x="-10%" y="-10%" width="120%" height="120%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.07" numOctaves="3" seed="7" result="noise"/>
+                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+                </filter>
+              </defs>
+
+              <!-- Tail: swings slowly from where it joins the body -->
+              <g class="cat-tail" filter="url(#ink)">
+                <path d="M222 124 C244 122 254 134 254 152 C254 178 252 198 248 216" stroke="#1c1a17" stroke-width="12" stroke-linecap="round" fill="none"/>
+              </g>
+
+              <!-- Body: grows a tiny bit taller and back down = breathing -->
+              <g class="cat-body" filter="url(#ink)">
+                <path d="M58 141 C54 100 90 78 148 78 C204 78 234 100 230 141 Z" fill="#1c1a17"/>
+                <path d="M104 140 q7 -8 14 0 M124 140 q7 -8 14 0" stroke="#fffaf3" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              </g>
+
+              <!-- Head: rises a little with each breath -->
+              <g class="cat-head" filter="url(#ink)">
+                <path d="M26 118 C24 98 32 88 40 84 L42 64 L57 79 C62 78 70 78 75 79 L90 64 L92 84 C100 90 104 100 102 118 C100 134 86 142 64 142 C44 142 28 134 26 118 Z" fill="#1c1a17" stroke="#fffdf8" stroke-width="4" paint-order="stroke"/>
+                <path d="M42 112 q6 5 12 0 M70 112 q6 5 12 0" stroke="#fffaf3" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+                <path d="M61 121 L67 121 L64 124 Z" fill="#fffaf3"/>
+                <path d="M34 122 L48 124 M34 128 L48 127 M94 122 L80 124 M94 128 L80 127" stroke="#fffaf3" stroke-width="1.3" stroke-linecap="round"/>
+              </g>
+            </svg>
+
+            <!-- The Zzz's float up from the cat's head, one after another -->
+            <span class="zzz zzz-1" aria-hidden="true">Z</span>
+            <span class="zzz zzz-2" aria-hidden="true">Z</span>
+            <span class="zzz zzz-3" aria-hidden="true">z</span>
+          </div>
+
+          <!-- The screen -->
+          <div class="laptop-screen">
+            <div class="browser-bar" aria-hidden="true">
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-address">binostudio.com</span>
+            </div>
+
+            <div class="screen-content">
+              <span class="label">Web design studio</span>
+              <h1>Custom websites that help small businesses grow.</h1>
+              <p>I design and build websites that look like your business, work great on every phone, and turn visitors into customers.</p>
+              <div class="button-row">
+                <a href="start.html" class="button">Get a free quote <span class="arrow">→</span></a>
+                <a href="#pricing" class="button button-outline">See pricing</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- The keyboard part under the screen -->
+          <div class="laptop-base" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====== 2. SOME OF MY WORK (a slideshow) ======
+         showcase.js changes the slides. Each slide has 3 parts with the same
+         data-slide number: the laptop screenshot, the phone screenshot, and the text. -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div class="section-intro">
+            <span class="label">Some of my work</span>
+            <h2>Websites that work as hard as you do.</h2>
+          </div>
+          <a href="work.html" class="text-link">See all work <span class="arrow">→</span></a>
+        </div>
+
+        <div class="showcase" data-showcase data-reveal>
+          <div class="device-stage">
+            <div class="mock-laptop">
+              <div class="mock-screen">
+                <img class="slide" data-slide="0" src="images/work/sukkar/sukkar-desktop.jpg" alt="Sukkar home page on a laptop" width="1600" height="1000">
+                <img class="slide" data-slide="1" src="images/work/sukkar/sukkar-book-desktop.jpg" alt="Sukkar booking page on a laptop" width="1600" height="1000" loading="lazy">
+                <img class="slide" data-slide="2" src="images/work/sukkar/sukkar-events-desktop.jpg" alt="Sukkar events calendar on a laptop" width="1600" height="1000" loading="lazy">
+                <div class="slide slide-soon" data-slide="3">
+                  <svg viewBox="0 0 320 220" role="img" aria-label="Drawing of a Turkish tea glass and a coffee cup">
+                <defs>
+                  <filter id="ink-cafe11" x="-10%" y="-10%" width="120%" height="120%">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.07" numOctaves="3" seed="4" result="noise"/>
+                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+                  </filter>
+                  <clipPath id="tea-glass11"><path d="M72 60 C76 92 98 104 98 124 C98 144 88 160 90 184 L130 184 C132 160 122 144 122 124 C122 104 144 92 148 60 Z"/></clipPath>
+                </defs>
+                <g filter="url(#ink-cafe11)">
+                  <!-- steam -->
+                  <path d="M100 48 C90 34 112 26 102 10 M122 50 C112 36 132 28 124 14" stroke="#1c1a17" stroke-width="4" stroke-linecap="round" fill="none"/>
+                  <path d="M220 100 C210 86 230 78 220 62 M244 100 C234 86 254 76 244 58" stroke="#1c1a17" stroke-width="4" stroke-linecap="round" fill="none"/>
+                  <!-- tea glass on a saucer -->
+                  <ellipse cx="110" cy="190" rx="66" ry="12" fill="#ffffff" stroke="#1c1a17" stroke-width="5"/>
+                  <rect x="60" y="76" width="100" height="112" fill="#1c1a17" clip-path="url(#tea-glass11)"/>
+                  <path d="M72 60 C76 92 98 104 98 124 C98 144 88 160 90 184 L130 184 C132 160 122 144 122 124 C122 104 144 92 148 60 Z" fill="none" stroke="#1c1a17" stroke-width="5" stroke-linejoin="round"/>
+                  <path d="M84 86 C88 100 100 108 104 120" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none"/>
+                  <!-- coffee cup on a saucer -->
+                  <ellipse cx="232" cy="190" rx="60" ry="11" fill="#ffffff" stroke="#1c1a17" stroke-width="5"/>
+                  <path d="M266 132 C292 128 294 162 262 164" stroke="#1c1a17" stroke-width="8" stroke-linecap="round" fill="none"/>
+                  <path d="M192 118 L272 118 C270 158 254 182 232 182 C210 182 194 158 192 118 Z" fill="#1c1a17"/>
+                  <path d="M200 138 l8 -7 l8 7 l8 -7 l8 7 l8 -7 l8 7 l8 -7 l8 7" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+                </g>
+              </svg>
+                  <span class="label">Turkish café · In progress</span>
+                </div>
+              </div>
+            </div>
+            <div class="mock-phone">
+              <img class="slide" data-slide="0" src="images/work/sukkar/sukkar-phone.jpg" alt="" width="780" height="1688">
+              <img class="slide" data-slide="1" src="images/work/sukkar/sukkar-book-phone.jpg" alt="" width="780" height="1688" loading="lazy">
+              <img class="slide" data-slide="2" src="images/work/sukkar/sukkar-events-phone.jpg" alt="" width="780" height="1688" loading="lazy">
+              <div class="slide slide-soon" data-slide="3"><svg viewBox="0 0 320 220" role="img" aria-label="Drawing of a Turkish tea glass and a coffee cup">
+                <defs>
+                  <filter id="ink-cafe21" x="-10%" y="-10%" width="120%" height="120%">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.07" numOctaves="3" seed="4" result="noise"/>
+                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+                  </filter>
+                  <clipPath id="tea-glass21"><path d="M72 60 C76 92 98 104 98 124 C98 144 88 160 90 184 L130 184 C132 160 122 144 122 124 C122 104 144 92 148 60 Z"/></clipPath>
+                </defs>
+                <g filter="url(#ink-cafe21)">
+                  <!-- steam -->
+                  <path d="M100 48 C90 34 112 26 102 10 M122 50 C112 36 132 28 124 14" stroke="#1c1a17" stroke-width="4" stroke-linecap="round" fill="none"/>
+                  <path d="M220 100 C210 86 230 78 220 62 M244 100 C234 86 254 76 244 58" stroke="#1c1a17" stroke-width="4" stroke-linecap="round" fill="none"/>
+                  <!-- tea glass on a saucer -->
+                  <ellipse cx="110" cy="190" rx="66" ry="12" fill="#ffffff" stroke="#1c1a17" stroke-width="5"/>
+                  <rect x="60" y="76" width="100" height="112" fill="#1c1a17" clip-path="url(#tea-glass21)"/>
+                  <path d="M72 60 C76 92 98 104 98 124 C98 144 88 160 90 184 L130 184 C132 160 122 144 122 124 C122 104 144 92 148 60 Z" fill="none" stroke="#1c1a17" stroke-width="5" stroke-linejoin="round"/>
+                  <path d="M84 86 C88 100 100 108 104 120" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none"/>
+                  <!-- coffee cup on a saucer -->
+                  <ellipse cx="232" cy="190" rx="60" ry="11" fill="#ffffff" stroke="#1c1a17" stroke-width="5"/>
+                  <path d="M266 132 C292 128 294 162 262 164" stroke="#1c1a17" stroke-width="8" stroke-linecap="round" fill="none"/>
+                  <path d="M192 118 L272 118 C270 158 254 182 232 182 C210 182 194 158 192 118 Z" fill="#1c1a17"/>
+                  <path d="M200 138 l8 -7 l8 7 l8 -7 l8 7 l8 -7 l8 7 l8 -7 l8 7" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+                </g>
+              </svg></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="showcase-info" aria-live="polite">
+              <div class="info" data-slide="0">
+                <span class="status">Live</span><br>
+                <span class="label">Food &amp; drink · Pop-up</span>
+                <h3>Sukkar</h3>
+                <p>A sugarcane juice pop-up needed one place for customers to see the menu, find upcoming markets and book events. Hand-drawn illustrations make the brand feel like the stand itself.</p>
+                <a href="sukkar.html" class="text-link">Read the case study <span class="arrow">→</span></a>
+              </div>
+              <div class="info" data-slide="1">
+                <span class="status">Live</span><br>
+                <span class="label">Sukkar · Booking</span>
+                <h3>Event booking, made simple</h3>
+                <p>Couples and party hosts fill out one clear form with their date, guest count and event type, so every booking request arrives with everything needed to send a quote.</p>
+                <a href="sukkar.html#solution" class="text-link">See how it works <span class="arrow">→</span></a>
+              </div>
+              <div class="info" data-slide="2">
+                <span class="status">Live</span><br>
+                <span class="label">Sukkar · Events</span>
+                <h3>A calendar customers actually use</h3>
+                <p>An events calendar shows where Sukkar pops up next, so regulars can find the stand without digging through social media.</p>
+                <a href="https://sukkarcane.com" class="text-link" target="_blank" rel="noopener">Visit sukkarcane.com <span class="arrow">↗</span></a>
+              </div>
+              <div class="info" data-slide="3">
+                <span class="status status-soon">In progress</span><br>
+                <span class="label">Café · Prototype</span>
+                <h3>Turkish café</h3>
+                <p>A warm, easy-to-use website for a local Turkish café, with the menu, photos, hours and events in one place. Launching soon.</p>
+                <a href="work.html#turkish-cafe" class="text-link">More about this project <span class="arrow">→</span></a>
+              </div>
+            </div>
+
+            <div class="showcase-controls">
+              <button class="round-button" type="button" data-prev aria-label="Previous project">←</button>
+              <button class="round-button" type="button" data-next aria-label="Next project">→</button>
+              <div class="dots">
+                <button class="dot" type="button" aria-label="Slide 1"></button>
+                <button class="dot" type="button" aria-label="Slide 2"></button>
+                <button class="dot" type="button" aria-label="Slide 3"></button>
+                <button class="dot" type="button" aria-label="Slide 4"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====== 3. WHAT YOU GET ====== -->
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-intro" data-reveal>
+          <span class="label">What you get</span>
+          <h2>Everything your website needs, handled for you.</h2>
+          <p>From the first sketch to launch day, one person takes care of all of it.</p>
+        </div>
+
+        <div class="icon-grid">
+          <div class="card" data-reveal><svg class="icon" viewBox="0 0 44 44" aria-hidden="true"><rect x="4" y="8" width="36" height="24" rx="3"/><path d="M16 38 H28 M22 32 V38 M11 15 L17 21 L11 27 M21 27 H30"/></svg><h3>Custom design &amp; development</h3><p>Designed from scratch around your business. No cookie-cutter templates.</p></div>
+          <div class="card" data-reveal><svg class="icon" viewBox="0 0 44 44" aria-hidden="true"><rect x="13" y="4" width="18" height="36" rx="4"/><path d="M19 34 H25"/></svg><h3>Phone-first</h3><p>Most of your customers will see your site on a phone, so that's where I start.</p></div>
+          <div class="card" data-reveal><svg class="icon" viewBox="0 0 44 44" aria-hidden="true"><circle cx="19" cy="19" r="11"/><path d="M27 27 L39 39"/></svg><h3>Google-ready</h3><p>Clear page titles, descriptions and local search basics so people can find you.</p></div>
+          <div class="card" data-reveal><svg class="icon" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="17"/><path d="M5 22 H39 M22 5 C14 14 14 30 22 39 M22 5 C30 14 30 30 22 39"/></svg><h3>Domain &amp; hosting setup</h3><p>I connect your domain and get everything online, registered in your name.</p></div>
+          <div class="card" data-reveal><svg class="icon" viewBox="0 0 44 44" aria-hidden="true"><path d="M6 10 L22 22 L38 10"/><rect x="6" y="9" width="32" height="24" rx="3"/></svg><h3>Forms that reach you</h3><p>Contact, booking and quote forms that land straight in your email.</p></div>
+          <div class="card" data-reveal><svg class="icon" viewBox="0 0 44 44" aria-hidden="true"><path d="M22 38 C10 30 4 23 4 15 C4 9 8 6 13 6 C17 6 20 8 22 12 C24 8 27 6 31 6 C36 6 40 9 40 15 C40 23 34 30 22 38 Z"/></svg><h3>Support after launch</h3><p>Need new hours, prices or photos? Just text me, or let the care plan handle it.</p></div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====== 4. ABOUT (short) ====== -->
+    <section class="section">
+      <div class="container about-grid">
+        <div data-reveal>
+          <div class="portrait"><img src="images/about/bino-1.jpg" alt="Bino, a fluffy orange and white cat" width="900" height="1125" loading="lazy"></div>
+        </div>
+        <div data-reveal>
+          <span class="label">About</span>
+          <h2>Hi, I'm Bino.</h2>
+          <p class="lead">bino. is a one-person web studio named after me, a very fluffy cat. My human designs and builds every website personally, and I supervise from the keyboard.</p>
+          <p>Every site is built to do more than look nice: it should help a small business get found, look trustworthy and win customers. Every project is handled personally, from planning to launch, and every website has our name on it.</p>
+          <a href="about.html" class="text-link">More about me <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====== 5. PRICING ====== -->
+    <section class="section section-soft" id="pricing">
+      <div class="container">
+        <div class="section-intro is-centered" data-reveal>
+          <span class="label">Pricing</span>
+          <h2>Simple, honest pricing.</h2>
+          <p>Pick a starting point. Every project begins with a free chat and a clear quote, with no surprises.</p>
+        </div>
+
+        <div class="plan-grid">
+          <article class="plan-card" data-reveal>
+            <span class="plan-name">Starter</span>
+            <p class="plan-for">A simple, professional one-page website to get your business online.</p>
+            <div class="price"><strong>$600</strong><span>one time</span></div>
+            <ul class="check-list">
+              <li>One-page website</li>
+              <li>Designed for phones first</li>
+              <li>Contact form to your email</li>
+              <li>Google Maps, hours &amp; social links</li>
+              <li>Connected to your own domain</li>
+              <li>1 round of changes</li>
+            </ul>
+            <a href="start.html?package=starter" class="button button-outline">Get a quote</a>
+          </article>
+
+          <article class="plan-card plan-card-featured" data-reveal>
+            <span class="plan-badge">Most popular</span>
+            <span class="plan-name">Standard</span>
+            <p class="plan-for">A complete website that shows everything you offer and brings in customers.</p>
+            <div class="price"><strong>$1,000</strong><span>one time</span></div>
+            <ul class="check-list">
+              <li>Up to 5 pages</li>
+              <li>Everything in Starter</li>
+              <li>Menu, services or photo gallery</li>
+              <li>Basic Google search setup</li>
+              <li>Fast loading &amp; easy to find</li>
+              <li>2 rounds of changes</li>
+            </ul>
+            <a href="start.html?package=standard" class="button button-light">Get a quote</a>
+          </article>
+
+          <article class="plan-card" data-reveal>
+            <span class="plan-name">Custom</span>
+            <p class="plan-for">For businesses that need special features or something nobody else has.</p>
+            <div class="price"><strong>$1,200+</strong><span>one time</span></div>
+            <ul class="check-list">
+              <li>Everything in Standard</li>
+              <li>Booking, events or ordering</li>
+              <li>Custom drawings &amp; animations</li>
+              <li>More pages as needed</li>
+              <li>Designed fully around your brand</li>
+              <li>Priced after a free chat</li>
+            </ul>
+            <a href="start.html?package=custom" class="button button-outline">Ask about Custom</a>
+          </article>
+        </div>
+
+        <div class="care-plan" data-reveal>
+          <div>
+            <h3>Care plan <span class="optional">· optional</span></h3>
+            <p>I keep your site online, secure and up to date, and make small changes whenever you need them, like new hours, prices or photos. Billed monthly after launch. Cancel anytime.</p>
+          </div>
+          <div class="care-price">$30<span> / month</span></div>
+        </div>
+
+        <p class="pricing-note">Nothing is charged online. Choosing a plan starts a free quote, and you only pay once you approve it. Your domain (about $10–20 a year) is registered in your name.</p>
+
+      </div>
+    </section>
+
+
+    <!-- ====== 6. HOW IT WORKS ====== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-intro" data-reveal>
+          <span class="label">How it works</span>
+          <h2>Three steps to a website you're proud of.</h2>
+        </div>
+
+        <ol class="steps">
+          <li data-reveal>
+            <span class="step-number">01</span>
+            <h3>Free chat</h3>
+            <p>We talk about your business, your customers, and what your website needs to do. Then I send a clear quote.</p>
+          </li>
+          <li data-reveal>
+            <span class="step-number">02</span>
+            <h3>Design</h3>
+            <p>I design your site around your brand. You give feedback, and we shape it together until it feels right.</p>
+          </li>
+          <li data-reveal>
+            <span class="step-number">03</span>
+            <h3>Launch &amp; support</h3>
+            <p>I build it, connect your domain, and put it online. After launch, I'm one text away.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- ====== 7. FAQ ====== -->
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-intro is-centered" data-reveal>
+          <span class="label">Questions</span>
+          <h2>Good to know.</h2>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>How long does a website take?</summary>
+            <p>Most sites are ready in 1 to 4 weeks. It depends on the size of the site and how quickly I get your photos and text.</p>
+          </details>
+          <details>
+            <summary>What do I need to give you?</summary>
+            <p>Your logo, photos, and the details of what you sell. If you don't have everything, that's okay. I'll send you a simple checklist and help with the rest.</p>
+          </details>
+          <details>
+            <summary>Do I own my website?</summary>
+            <p>Yes. Once the project is paid in full, the website and its content are yours, and your domain is always registered in your name.</p>
+          </details>
+          <details>
+            <summary>Do I have to pay every month?</summary>
+            <p>No. The care plan is optional. Without it, I set up your hosting in your name and hand everything over. You can always ask me for changes later.</p>
+          </details>
+          <details>
+            <summary>Will my website show up on Google?</summary>
+            <p>Every Standard and Custom site gets a basic Google setup: clear page titles, descriptions, and a Google Business Profile link. Nobody can promise the #1 spot, but you'll be set up the right way.</p>
+          </details>
+          <details>
+            <summary>How does payment work?</summary>
+            <p>Nothing is charged on this website. Choosing a plan just starts a free quote request. After a short chat, I send a written quote. When you're happy with it, you pay a 50% deposit through a secure online invoice (card or bank transfer), and the rest before your site goes live.</p>
+          </details>
+          <details>
+            <summary>How does the care plan work, and how do I cancel?</summary>
+            <p>The care plan is optional and only starts after your site launches. It's billed automatically once a month to the card you choose. You can cancel anytime by emailing hello@binostudio.com, or from the billing link in your receipt, and it stops at the end of that month.</p>
+          </details>
+          <details>
+            <summary>Do you work with businesses outside Virginia?</summary>
+            <p>Yes. Everything can be done over email, phone and video calls, so it doesn't matter where your business is.</p>
+          </details>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====== CALL TO ACTION: Bino peeks over the black box ======
+         Bino's eyes follow your mouse. Click him and he meows (if cat sounds are on). -->
+    <section class="section">
+      <div class="container">
+        <div class="cta" data-reveal>
+          <button class="peek-cat" type="button" data-meow aria-label="Bino the cat. Click to say hi.">
+            <svg viewBox="0 0 220 200" aria-hidden="true">
+              <defs>
+                <filter id="ink-peek" x="-10%" y="-10%" width="120%" height="120%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" seed="5" result="noise"/>
+                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G"/>
+                </filter>
+                <clipPath id="peek-head"><path d="M28 171 C24 128 36 94 56 76 L56 30 L92 58 C104 54 116 54 128 58 L164 30 L164 76 C184 94 196 128 192 171 Z"/></clipPath>
+              </defs>
+              <g filter="url(#ink-peek)">
+                <!-- head: white with an orange cap, like the real Bino -->
+                <path d="M28 171 C24 128 36 94 56 76 L56 30 L92 58 C104 54 116 54 128 58 L164 30 L164 76 C184 94 196 128 192 171 Z" fill="#ffffff"/>
+                <path class="peek-ear-left" d="M0 0 H220 V96 C186 84 160 104 128 98 C110 94 104 82 110 70 C96 78 70 90 40 96 C24 99 10 96 0 92 Z" fill="#f2853a" clip-path="url(#peek-head)"/>
+                <path d="M28 171 C24 128 36 94 56 76 L56 30 L92 58 C104 54 116 54 128 58 L164 30 L164 76 C184 94 196 128 192 171" fill="none" stroke="#1c1a17" stroke-width="7" stroke-linejoin="round"/>
+                <!-- open eyes (they follow your mouse) -->
+                <g class="peek-eyes">
+                  <g class="peek-pupil">
+                    <ellipse cx="84" cy="122" rx="9" ry="12" fill="#1c1a17"/>
+                    <ellipse cx="136" cy="122" rx="9" ry="12" fill="#1c1a17"/>
+                    <circle cx="87" cy="117" r="3" fill="#ffffff"/>
+                    <circle cx="139" cy="117" r="3" fill="#ffffff"/>
+                  </g>
+                </g>
+                <!-- happy eyes ^ ^ (show after a click) -->
+                <path class="peek-happy" d="M74 126 Q84 112 94 126 M126 126 Q136 112 146 126" stroke="#1c1a17" stroke-width="5" stroke-linecap="round" fill="none"/>
+                <!-- nose, mouth, whiskers -->
+                <path d="M104 140 L116 140 L110 147 Z" fill="#f2853a" stroke="#1c1a17" stroke-width="2.5" stroke-linejoin="round"/>
+                <path d="M110 147 q-6 8 -13 3 M110 147 q6 8 13 3" stroke="#1c1a17" stroke-width="3" stroke-linecap="round" fill="none"/>
+                <path d="M8 132 L60 140 M10 150 L60 148 M212 132 L160 140 M210 150 L160 148" stroke="#1c1a17" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- paws resting on the edge of the box -->
+                <g fill="#ffffff" stroke="#1c1a17" stroke-width="6">
+                  <ellipse cx="66" cy="178" rx="24" ry="15"/>
+                  <ellipse cx="154" cy="178" rx="24" ry="15"/>
+                </g>
+                <path d="M58 186 v-8 M70 186 v-8 M146 186 v-8 M158 186 v-8" stroke="#1c1a17" stroke-width="3" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </button>
+
+          <h2>Let's build yours.</h2>
+          <p>Tell me about your business. I'll reply within a day or two with ideas and a clear quote.</p>
+          <div class="button-row">
+            <a href="start.html" class="button button-light">Get a free quote <span class="arrow">→</span></a>
+            <a href="contact.html" class="button button-outline">Ask a question</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== FOOTER (same on every page) ====== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo logo-footer"><img src="images/logo/bino-logo.png" alt="bino. home" width="851" height="367"></a>
+          <p class="footer-tagline">Custom websites for small businesses, designed and built by hand.</p>
+        </div>
+        <div>
+          <span class="label footer-title">Studio</span>
+          <ul>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="start.html">Get a free quote</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="label footer-title">Legal</span>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <span class="label footer-title">Contact</span>
+          <ul>
+            <li><a href="mailto:hello@binostudio.com">hello@binostudio.com</a></li>
+            <li><a href="tel:+15402540791">(540) 254-0791</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-bottom">
+        <span>© <span class="year">2026</span> bino. web studio</span>
+        <button class="sound-toggle" type="button" aria-pressed="false">Cat sounds: <span class="sound-state">off</span></button>
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- Scripts go at the end so the page shows up first -->
+  <script src="js/main.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/cats.js"></script>
+  <script src="js/showcase.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Settings for Netlify (the host).
+# There's no build step: Netlify just publishes this folder as it is.
+[build]
+  publish = "."
+  command = ""
+
+# Fonts, images and sounds rarely change, so browsers can keep them for a while (faster repeat visits).
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# The old Services page moved to Pricing
+[[redirects]]
+  from = "/services.html"
+  to = "/pricing.html"
+  status = 301
