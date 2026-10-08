@@ -21,6 +21,8 @@ git push
 
 Netlify sees the push and updates binostudio.com in about a minute.
 
+Note: Netlify only builds commits from binowebstudio@gmail.com. Run `git config user.email binowebstudio@gmail.com` once in this folder.
+
 ## Where everything lives
 
 ```
