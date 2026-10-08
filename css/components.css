@@ -154,6 +154,11 @@ a:hover .arrow {
   margin-right: auto;
 }
 
+/* Less space between the intro and the form (quote page) */
+.page-header.is-tight {
+  padding-bottom: 8px;
+}
+
 .page-header.is-centered .button-row {
   justify-content: center;
 }
@@ -672,6 +677,24 @@ a:hover .arrow {
   grid-template-columns: 1fr 1.4fr;
   gap: 56px;
   align-items: start;
+}
+
+/* Contact page: intro sits in the left column so the form lines up with it */
+.contact-section {
+  padding-top: 80px;
+}
+
+.contact-intro {
+  margin-bottom: 40px;
+}
+
+.contact-intro .label {
+  margin-bottom: 16px;
+}
+
+.contact-intro p {
+  color: var(--muted);
+  font-size: 20px;
 }
 
 .contact-details {
