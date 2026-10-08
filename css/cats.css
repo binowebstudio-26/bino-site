@@ -204,11 +204,6 @@
   animation: purr-shake 0.12s linear infinite;
 }
 
-.sleepy-cat.is-talking .zzz {
-  animation-play-state: paused;
-  opacity: 0;
-}
-
 @keyframes purr-shake {
   0%, 100% { translate: 0 0; }
   50%      { translate: 0.6px -0.6px; }
