@@ -35,7 +35,7 @@ Alternative:
 - `index.html` — home (laptop hero with sleeping cat, work slideshow, services, about, packages, steps, FAQ, CTA)
 - `work.html` — project list; `sukkar.html` — case study
 - `services.html` — packages + FAQ. Prices are intentionally NOT shown (owner's decision); everything is quoted after a free chat.
-- `about.html` — short About page. The owner's public name on the site is "Somaya Malek" (use exactly this spelling). Never add her city or home location; the site only says "Virginia".
+- `about.html` — short About page. The owner's public name on the site is "Somaia Mallek" (use exactly this spelling). Never add her city or home location; the site only says "Virginia".
 - `start.html` — quote form; `contact.html` — contact
 - `privacy.html`, `terms.html` — legal pages
 - `thanks.html`, `404.html`

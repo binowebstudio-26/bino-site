@@ -32,7 +32,7 @@ bino-site/
 ├── work.html         All projects (Sukkar + Turkish café prototype)
 ├── sukkar.html       Sukkar case study (challenge → solution → outcome)
 ├── services.html     Packages (no prices shown), care plan, FAQ
-├── about.html        About Somaya
+├── about.html        About Somaia
 ├── start.html        "Get a free quote" form (Netlify form "project-inquiry")
 ├── contact.html      Contact details + short form (Netlify form "contact")
 ├── privacy.html      Privacy Policy
