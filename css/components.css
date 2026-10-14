@@ -731,7 +731,7 @@ a:hover .arrow {
 }
 
 .contact-grid .form {
-  margin: 0;
+  margin: 46px 0 0; /* lines the top of the box up with "Let's talk." */
   width: 100%;
   padding: 34px;
   background: var(--card);
@@ -745,6 +745,7 @@ a:hover .arrow {
   }
 
   .contact-grid .form {
+    margin-top: 0;
     padding: 24px 20px;
   }
 }

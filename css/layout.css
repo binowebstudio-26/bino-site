@@ -41,6 +41,8 @@
 }
 
 .site-header .container {
+  max-width: 1600px; /* wider than the page content, so the logo and menu sit closer to the edges */
+  padding: 0 clamp(24px, 4vw, 64px);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -194,6 +196,13 @@
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 72px 0 36px;
+  overflow-x: clip; /* keeps the full-width line below from causing side-scrolling */
+}
+
+/* Same width as the header, so the footer lines up with the logo and menu */
+.site-footer .container {
+  max-width: 1600px;
+  padding: 0 clamp(24px, 4vw, 64px);
 }
 
 .footer-grid {
@@ -236,9 +245,9 @@
 }
 
 .footer-bottom {
+  position: relative;
   margin: 56px 0 0;
   padding-top: 24px;
-  border-top: 1px solid var(--line);
   font-size: 15px;
   color: var(--muted);
   display: flex;
@@ -246,6 +255,18 @@
   justify-content: space-between;
   align-items: center;
   gap: 12px;
+}
+
+/* The line above the copyright runs across the whole page */
+.footer-bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 1px;
+  background: var(--line);
+  transform: translateX(-50%);
 }
 
 @media (max-width: 900px) {
