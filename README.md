@@ -1,6 +1,6 @@
-# bino. web studio 🐾
+# Bino. web studio 🐾
 
-The website for **bino.** (binostudio.com). Plain HTML, CSS and JavaScript, no build tools.
+The website for **Bino.** (binostudio.com). Plain HTML, CSS and JavaScript, no build tools.
 
 ## How to preview it
 

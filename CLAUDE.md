@@ -2,7 +2,7 @@
 
 ## Project overview
 
-This repository is a simple static portfolio/agency website for bino. It uses plain HTML, CSS, and JavaScript with no build step, package manager, or test framework.
+This repository is a simple static portfolio/agency website for Bino. It uses plain HTML, CSS, and JavaScript with no build step, package manager, or test framework.
 
 The site is designed as a multi-page marketing site with:
 

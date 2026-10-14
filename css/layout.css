@@ -212,7 +212,7 @@
 }
 
 .logo-footer img {
-  height: 60px;
+  height: 84px; /* the footer logo includes "WEB STUDIO" underneath */
 }
 
 .footer-tagline {
